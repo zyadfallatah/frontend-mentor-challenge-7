@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="src/style.css">
+  
+  <script type="module" src="src/main.ts" defer></script>
+</head>
+<body class="lg:px-20 xl:px-32 max-w-[1440px] mx-auto">
+
+  <header class="relative flex justify-between px-6 md:py-0 md:border-b md:border-grayish-blue">
+    <div class="flex items-center gap-4 lg:gap-16">
+      <nav class="hidden fixed w-[70%] h-svh left-0 top-0 bg-white p-8 z-10" id="mobile-nav">
+        <img src="images/icon-close.svg" alt="close menu" id="close-menu">
+        <ul class="mt-10 text-lg font-bold space-y-4">
+          <li>
+            <a class="block" href="#">Collections</a>
+          </li>
+          <li>
+            <a class="block" href="#">Men</a>
+          </li>
+          <li>
+            <a class="block" href="#">Women</a>
+          </li>
+          <li>
+            <a class="block" href="#">About</a>
+          </li>
+          <li>
+            <a class="block" href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <img class="md:hidden" src="images/icon-menu.svg" alt="menu" id="menu">
+      <img src="images/logo.svg" alt="website logo">
+
+      <nav class="hidden md:block">
+        <ul class="flex gap-4 lg:text-lg text-dark-grayish-blue">
+          <li>
+            <a class="block md:py-8 border-b-[3px] border-transparent hover:border-orange" href="#">Collections</a>
+          </li>
+          <li>
+            <a class="block md:py-8 border-b-[3px] border-transparent hover:border-orange" href="#">Men</a>
+          </li>
+          <li>
+            <a class="block md:py-8 border-b-[3px] border-transparent hover:border-orange" href="#">Women</a>
+          </li>
+          <li>
+            <a class="block md:py-8 border-b-[3px] border-transparent hover:border-orange" href="#">About</a>
+          </li>
+          <li>
+            <a class="block md:py-8 border-b-[3px] border-transparent hover:border-orange" href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="flex items-center gap-4 lg:gap-8">
+      <div class="relative">
+        <img class="peer cursor-pointer py-8" src="images/icon-cart.svg" alt="cart" id="cart-icon">
+        <span class="absolute hidden text-white font-bold bg-orange rounded-full w-6 h-4 top-[24px] 
+        right-[-12px] place-content-center">0</span>
+      </div>
+      <img class="max-w-8 md:max-w-12 cursor-pointer border-2 border-transparent hover:border-orange rounded-full" src="images/image-avatar.png" alt="user avatar">
+  
+      <div id="cart" class="absolute opacity-0 w-[95%] lg:max-w-[30%] bg-white shadow-md max-sm:left-0 lg:right-[-5%] rounded-md ml-3 min-h-60
+      lg:min-h-40 top-[95px] translate-y-20 -z-50 duration-500">
+        <h3 class="font-bold border-b border-grayish-blue p-3">Cart</h3>
+        <section class="grid place-items-center p-3 min-h-40" id="products">
+          <h3 class="text-dark-grayish-blue font-bold">Your Cart is empty</h3>
+        </section>
+      </div>
+    </div>
+  </header>
+
+  <main class="lg:flex lg:mt-20 xl:px-20 lg:gap-24 items-start">
+    <section>
+      <div class="relative">
+        <span id="prev-button" class="absolute flex justify-center items-center bg-white rounded-full size-9 top-[50%] left-3 lg:hidden">
+          <img src="images/icon-previous.svg" alt="previous button" class="mr-[2px]">
+        </span>
+        <img id="current-image" src="images/image-product-1.jpg" alt="image" class="w-full h-[300px] lg:w-fit xl:max-w-[414px] lg:h-[350px] xl:h-[414px] lg:rounded-lg cursor-pointer">
+        <span id="next-button" class="absolute flex justify-center items-center bg-white rounded-full size-9 top-[50%] right-3 lg:hidden">
+          <img src="images/icon-next.svg" alt="next button" class="ml-[2px]">
+        </span>
+      </div>
+
+      <div class="hidden lg:flex gap-8 my-8 flex-wrap" id="provided-images">
+        <img src="images/image-product-1.jpg" alt="product image" class="size-16 xl:size-20 cursor-pointer rounded-lg hover:opacity-70 border border-orange opacity-70">
+        <img src="images/image-product-2.jpg" alt="product image" class="size-16 xl:size-20 cursor-pointer rounded-lg hover:opacity-70">
+        <img src="images/image-product-3.jpg" alt="product image" class="size-16 xl:size-20 cursor-pointer rounded-lg hover:opacity-70">
+        <img src="images/image-product-4.jpg" alt="product image" class="size-16 xl:size-20 cursor-pointer rounded-lg hover:opacity-70">
+      </div>  
+    </section>
+
+    <section class="flex-1 space-y-4 lg:space-y-8 p-6 lg:p-0">
+      <h1 class="text-dark-grayish-blue font-bold uppercase">Sneaker Company</h1>
+      <h2 class="text-3xl lg:text-5xl text-very-dark-blue font-bold" id="product-title">Fall Limited Edition Sneakers</h2>
+      <p class="text-dark-grayish-blue text-[14px] max-w-[320px] lg:max-w-none lg:text-base">
+        These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+      <section class="flex justify-between items-center lg:flex-col lg:items-start">
+        <div class="flex items-center gap-4">
+          <p class="text-2xl font-bold" id="price">$125.00</p>
+          <p class="bg-very-dark-blue text-white py-[2px] px-2 rounded-md">50%</p>
+        </div>
+        <p class="text-dark-grayish-blue line-through font-bold">
+          $250.00
+        </p>
+      </section>
+      <div class="lg:flex items-center gap-4">
+        <div class="flex flex-1 items-center justify-between bg-light-grayish-blue p-3 rounded-md lg:max-w-40">
+          <img class="cursor-pointer hover:opacity-70 p-2" src="images/icon-minus.svg" alt="Minus Button" id="decrement">
+          <p id="amount">0</p>
+          <img class="cursor-pointer hover:opacity-70 p-2" src="images/icon-plus.svg" alt="Plus Button" id="increment">
+        </div>
+        <button id="add-product" class="flex flex-1 justify-center items-center gap-1 w-full bg-orange hover:bg-opacity-70 text-very-dark-blue p-3 rounded-md mt-4 lg:mt-0">
+          <img src="images/icon-cart-black.svg" alt="cart icon" id="black-cart">
+          <p class="font-bold">Add To cart</p>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div id="overlay" class="hidden place-items-center absolute size-full bg-black bg-opacity-50 top-0 left-0 -z-50 max-w-10">
+    <div class="relative">
+      <img src="images/icon-close.svg" alt="" class="absolute cursor-pointer top-[-30px] right-0 w-5" id="overlay-close">
+      <div id="prev-button-desk" class="absolute cursor-pointer grid place-items-center size-12 top-[42%] left-[-20px] translate-y-[-50%] bg-white rounded-full">
+        <img src="images/icon-previous.svg" alt="" class="mr-[2px]">
+      </div>
+      <img src="images/image-product-1.jpg" alt="" class="w-[500px]" id="current-image-desk">
+      <div id="next-button-desk" class="absolute cursor-pointer grid place-items-center size-12 top-[42%] right-[-20px] translate-y-[-50%] bg-white rounded-full">
+        <img src="images/icon-next.svg" alt="" class="ml-[2px]">
+      </div>
+
+      <div class="flex justify-center gap-8 my-8 flex-wrap" id="provided-images-desk">
+        <img src="images/image-product-1.jpg" alt="product image" class="size-16 xl:size-20 cursor-pointer rounded-lg hover:opacity-70 border border-orange opacity-70">
+        <img src="images/image-product-2.jpg" alt="product image" class="size-16 xl:size-20 cursor-pointer rounded-lg hover:opacity-70">
+        <img src="images/image-product-3.jpg" alt="product image" class="size-16 xl:size-20 cursor-pointer rounded-lg hover:opacity-70">
+        <img src="images/image-product-4.jpg" alt="product image" class="size-16 xl:size-20 cursor-pointer rounded-lg hover:opacity-70">
+      </div> 
+    </div> 
+  </div>
+
+</body>
+</html>
